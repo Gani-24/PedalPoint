@@ -10,10 +10,10 @@ import { AdminService } from '../../services/admin.service'
 export class SearchCarComponent {
   searchCarForm!: FormGroup
   listOfOption: Array<{ label: string; value: string }> = []
-  listOfBrands = ['Toyota', 'Honda', 'BMW', 'Mercedes', 'Audi', 'Lexus']
-  listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
-  listOfColor = ['Red', 'Blue', 'Brown', 'Green']
-  listOfTransmission = ['Manual', 'Automatic']
+  listOfBrands = ['Hero', 'Hercules', 'Leader', 'BMX', 'Atlas', 'Firefox','BSA','Roadeo']
+  // listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
+  listOfColor = ['Red', 'Blue', 'Brown', 'Green','Black']
+  // listOfTransmission = ['Manual', 'Automatic']
   isSpinning = false
   cars: any[] = []
 
@@ -23,8 +23,8 @@ export class SearchCarComponent {
   ) {
     this.searchCarForm = this.fb.group({
       brand: [null],
-      type: [null],
-      transmission: [null],
+      // type: [null],
+      // transmission: [null],
       color: [null]
     })
   }

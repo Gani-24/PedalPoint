@@ -26,21 +26,21 @@ export class UpdateCarComponent {
   existingImage: string | null = null
   updateForm!: FormGroup // ! is used to tell TypeScript that this variable will be initialized later
   listOfOption: Array<{ label: string; value: string }> = []
-  listOfBrands = ['Toyota', 'Honda', 'BMW', 'Mercedes', 'Audi', 'Lexus']
-  listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
-  listOfColor = ['Red', 'Blue', 'Brown', 'Green']
-  listOfTransmission = ['Manual', 'Automatic']
+  listOfBrands = ['Hero', 'Hercules', 'Leader', 'BMX', 'Atlas', 'Firefox','BSA','Roadeo']
+  // listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
+  listOfColor = ['Red', 'Blue', 'Brown', 'Green','Black']
+  // listOfTransmission = ['Manual', 'Automatic']
 
   ngOnInit() {
     this.updateForm = this.fb.group({
       name: [null, Validators.required],
       brand: [null, Validators.required],
-      type: [null, Validators.required],
+      // type: [null, Validators.required],
       color: [null, Validators.required],
-      transmission: [null, Validators.required],
+      // transmission: [null, Validators.required],
       price: [null, Validators.required],
       description: [null, Validators.required],
-      year: [null, Validators.required]
+      // year: [null, Validators.required]
     })
 
     this.getCarById()
