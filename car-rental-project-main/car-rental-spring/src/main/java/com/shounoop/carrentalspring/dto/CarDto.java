@@ -11,11 +11,11 @@ public class CarDto {
     private String brand;
     private String color;
     private String name;
-    private String type;
-    private String transmission;
+    //private String type;
+   // private String transmission;
     private String description;
     private Long price;
-    private Integer year;
+    //private Integer year;
     private MultipartFile image;
     private byte[] returnedImage;
 }
