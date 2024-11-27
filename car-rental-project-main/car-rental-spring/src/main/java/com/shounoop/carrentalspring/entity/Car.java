@@ -16,11 +16,11 @@ public class Car {
     private String brand;
     private String color;
     private String name;
-    private String type;
-    private String transmission;
+    //private String type;
+    //private String transmission;
     private String description;
     private Long price;
-    private Integer year;
+    //private Integer year;
 
     @Column(columnDefinition = "longblob")
     private byte[] image;
@@ -33,9 +33,9 @@ public class Car {
         carDto.setColor(color);
         carDto.setPrice(price);
         carDto.setDescription(description);
-        carDto.setType(type);
-        carDto.setTransmission(transmission);
-        carDto.setYear(year);
+       // carDto.setType(type);
+        //carDto.setTransmission(transmission);
+        //carDto.setYear(year);
         carDto.setReturnedImage(image);
         return carDto;
     }

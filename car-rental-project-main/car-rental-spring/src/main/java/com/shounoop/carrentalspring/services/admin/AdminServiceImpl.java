@@ -37,9 +37,9 @@ public class AdminServiceImpl implements AdminService {
             car.setColor(carDto.getColor());
             car.setDescription(carDto.getDescription());
             car.setPrice(carDto.getPrice());
-            car.setTransmission(carDto.getTransmission());
-            car.setType(carDto.getType());
-            car.setYear(carDto.getYear());
+            //car.setTransmission(carDto.getTransmission());
+            //car.setType(carDto.getType());
+            //car.setYear(carDto.getYear());
             car.setImage(carDto.getImage().getBytes());
 
             carRepository.save(car);
@@ -79,10 +79,10 @@ public class AdminServiceImpl implements AdminService {
             }
 
             existingCar.setPrice(carDto.getPrice());
-            existingCar.setYear(carDto.getYear());
-            existingCar.setType(carDto.getType());
+            //existingCar.setYear(carDto.getYear());
+            //existingCar.setType(carDto.getType());
             existingCar.setDescription(carDto.getDescription());
-            existingCar.setTransmission(carDto.getTransmission());
+            //existingCar.setTransmission(carDto.getTransmission());
             existingCar.setColor(carDto.getColor());
             existingCar.setName(carDto.getName());
             existingCar.setBrand(carDto.getBrand());
@@ -125,8 +125,8 @@ public class AdminServiceImpl implements AdminService {
     public CarDtoListDto searchCar(SearchCarDto searchCarDto) {
         Car car = new Car();
         car.setBrand(searchCarDto.getBrand());
-        car.setType(searchCarDto.getType());
-        car.setTransmission(searchCarDto.getTransmission());
+        //car.setType(searchCarDto.getType());
+        //car.setTransmission(searchCarDto.getTransmission());
         car.setColor(searchCarDto.getColor());
 
         ExampleMatcher exampleMatcher = ExampleMatcher.matchingAll().withMatcher("brand", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()).withMatcher("type", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()).withMatcher("transmission", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase()).withMatcher("color", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase());
