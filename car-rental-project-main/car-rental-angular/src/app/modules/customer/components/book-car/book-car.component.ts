@@ -49,13 +49,13 @@ export class BookCarComponent {
       res => {
         this.isSpinning = false
 
-        this.message.success('Car booked successfully')
+        this.message.success('Cycle booked successfully')
         this.router.navigateByUrl('/customer/dashboard')
       },
 
       error => {
         this.isSpinning = false
-        this.message.error('Error occurred while booking the car')
+        this.message.error('Error occurred while booking the cycle')
       }
     )
   }
