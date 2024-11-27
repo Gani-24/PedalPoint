@@ -1,27 +1,18 @@
-<div style="background-color: #f8f8f8; min-height: 91vh; padding: 24px;">
-  <div style="padding-top: 10px;"></div>
-
-  <div style="margin-top: 10px;" class="child" *ngFor="let car of cars">
-    <div nz-row style="background-color: #ccc; padding: 24px;">
-      <div nz-col nzSpan="8">
-        <img class="profile" style="height: 130px; border-radius: 10px; object-fit: cover;" [src]="car.processedImage"
-          alt="profile">
+<div class="customer-dashboard">
+  <div *ngFor="let car of cars" class="car-card">
+    <div class="car-image">
+      <img [src]="car.processedImage" alt="{{car.name}}">
+    </div>
+    <div class="car-info">
+      <h2 class="car-title">{{car.brand}} - {{car.name}}</h2>
+      <p class="car-description">{{car.description}}</p>
+      <div class="car-details">
+        <p><strong>Price:</strong> ${{car.price}}</p>
+        <p><strong>Color:</strong> {{car.color}}</p>
       </div>
-
-      <div nz-col nzSpan="16">
-        <h2 style="cursor: pointer; color: #108ee9;">{{car.brand}} - {{car.name}}</h2>
-
-        <p>{{car.description}}</p>
-
-        <hr>
-
-        <h5>Price: <b>${{car.price}}</b> - Color : <b>{{car.color}}</b> 
-        </h5>
-
-        <div style="float: right;">
-          <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
-            routerLink="/customer/book/{{car.id}}">Book</button>
-        </div>
+      <div class="car-actions">
+        <button nzSize="small" nz-button nzType="primary" class="book-button"
+          [routerLink]="'/customer/book/' + car.id">Book</button>
       </div>
     </div>
   </div>

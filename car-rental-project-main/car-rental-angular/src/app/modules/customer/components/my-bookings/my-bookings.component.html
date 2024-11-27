@@ -1,3 +1,12 @@
 <nz-spin [nzSpinning]="isSpinning">
-  <div *ngFor="let booking of bookings">{{booking.id}} - {{booking.bookCarStatus}}</div>
+  <div class="customer-booking-page">
+    <div *ngFor="let booking of bookings" class="booking-card">
+      <div class="booking-info">
+        <h2 class="booking-title">Booking ID: {{booking.id}}</h2>
+        <p class="booking-status" [class.pending]="booking.bookCarStatus === 'PENDING'">
+          Status: {{booking.bookCarStatus}}
+        </p>
+      </div>
+    </div>
+  </div>
 </nz-spin>
