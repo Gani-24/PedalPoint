@@ -15,10 +15,10 @@ export class PostCarComponent {
   selectedFile: File | null = null
   imagePreview: string | ArrayBuffer | null = null
   listOfOption: Array<{ label: string; value: string }> = []
-  listOfBrands = ['Toyota', 'Honda', 'BMW', 'Mercedes', 'Audi', 'Lexus']
-  listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
-  listOfColor = ['Red', 'Blue', 'Brown', 'Green']
-  listOfTransmission = ['Manual', 'Automatic']
+  listOfBrands = ['Hero', 'Hercules', 'Leader', 'BMX', 'Atlas', 'Firefox','BSA','Roadeo']
+  // listOfType = ['Sports Car', 'Diesel', 'Crossover', 'Luxury Car']
+  listOfColor = ['Red', 'Blue', 'Brown', 'Green','Black']
+  // listOfTransmission = ['Manual', 'Automatic']
 
   constructor(
     private fb: FormBuilder,
@@ -31,12 +31,12 @@ export class PostCarComponent {
     this.postCarForm = this.fb.group({
       name: [null, Validators.required],
       brand: [null, Validators.required],
-      type: [null, Validators.required],
+      // type: [null, Validators.required],
       color: [null, Validators.required],
-      transmission: [null, Validators.required],
+      // transmission: [null, Validators.required],
       price: [null, Validators.required],
       description: [null, Validators.required],
-      year: [null, Validators.required]
+      // year: [null, Validators.required]
     })
   }
 
@@ -47,21 +47,21 @@ export class PostCarComponent {
     formData.append('image', this.selectedFile as Blob)
     formData.append('brand', this.postCarForm.value.brand)
     formData.append('name', this.postCarForm.value.name)
-    formData.append('type', this.postCarForm.value.type)
+    // formData.append('type', this.postCarForm.value.type)
     formData.append('color', this.postCarForm.value.color)
-    formData.append('year', this.postCarForm.value.year)
-    formData.append('transmission', this.postCarForm.value.transmission)
+    // formData.append('year', this.postCarForm.value.year)
+    // formData.append('transmission', this.postCarForm.value.transmission)
     formData.append('description', this.postCarForm.value.description)
     formData.append('price', this.postCarForm.value.price)
 
     this.adminService.postCar(formData).subscribe(
       res => {
-        this.message.success('Car posted successfully', { nzDuration: 3000 })
+        this.message.success('Cycle posted successfully', { nzDuration: 3000 })
         this.isSpinning = false
         this.router.navigateByUrl('/admin/dashboard')
       },
       error => {
-        this.message.error('Error posting car', { nzDuration: 3000 })
+        this.message.error('Error posting Cycle', { nzDuration: 3000 })
         console.log(error)
       }
     )
