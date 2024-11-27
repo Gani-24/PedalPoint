@@ -68,10 +68,10 @@ export class UpdateCarComponent {
 
     formData.append('brand', this.updateForm.value.brand)
     formData.append('name', this.updateForm.value.name)
-    formData.append('type', this.updateForm.value.type)
+    // formData.append('type', this.updateForm.value.type)
     formData.append('color', this.updateForm.value.color)
-    formData.append('year', this.updateForm.value.year)
-    formData.append('transmission', this.updateForm.value.transmission)
+    // formData.append('year', this.updateForm.value.year)
+    // formData.append('transmission', this.updateForm.value.transmission)
     formData.append('description', this.updateForm.value.description)
     formData.append('price', this.updateForm.value.price)
 
